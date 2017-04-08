@@ -21,7 +21,7 @@ public class AmtrakHomeTest {
     driver.manage().deleteAllCookies();
 
   }
-
+// This test case will automate the homepage title
   @Test
   public void verifyTitleWithoutLogin() {
     AmtrakHomePage homePage = new AmtrakHomePage(driver);
