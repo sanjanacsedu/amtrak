@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import com.amtrak.webdriver.pages.AmtrakHomePage;
+import com.amtrak.webdriver.pages.DealsPage;
 
 public class AmtrakHomeTest {
 
@@ -22,14 +23,22 @@ public class AmtrakHomeTest {
 
   }
 // This test case will automate the homepage title
-  @Test
+  /*@Test
   public void verifyTitleWithoutLogin() {
     AmtrakHomePage homePage = new AmtrakHomePage(driver);
     homePage.load();
     String title = homePage.getTitle();
     Assert.assertEquals("Train & Bus Tickets - National Railroad - USA & Canada | Amtrak", title);
+  }*/
+
+//This test case will find the deals of California using deals page
+  
+  @Test
+  public void getDealsCount() {
+	  AmtrakHomePage homePage = new AmtrakHomePage(driver);
+	  homePage.load();
+	  DealsPage dealspage = new DealsPage(driver);
+	  dealspage.getStations(95129);
   }
-
-
 }
 
