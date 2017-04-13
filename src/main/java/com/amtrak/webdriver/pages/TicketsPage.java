@@ -1,4 +1,4 @@
-package src.main.java.com.amtrak.webdriver.pages;
+package com.amtrak.webdriver.pages;
 
 public class TicketsPage {
 
