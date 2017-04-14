@@ -9,11 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class DealsPage {
-	private final WebDriver webdriver;
+  private final WebDriver webdriver;
 
-	public DealsPage(WebDriver driver) {
-		webdriver = driver;
-	}
+  public DealsPage(WebDriver driver) {
+    webdriver = driver;
+  }
+
 
 	/*
 	 * 1.go to homepage and select deals drop down page from homepage 2.select
@@ -37,4 +38,5 @@ public class DealsPage {
 		}
 		return stationlist;
 	}
+  
 }
