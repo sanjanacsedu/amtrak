@@ -20,7 +20,7 @@ public class DealsPage {
 	 * deals 3.click on california button 4.count the number of deals in
 	 * california, it should be more than 5
 	 */
-	public void getStations(int zipcode) {
+	public List<String> getStations(int zipcode) {
 		WebElement dealsdropdown = webdriver.findElement(By.cssSelector("div.navsec_layout ul.nav_links li.deals"));
 		dealsdropdown.click();
 		WebElement dealsbtn = webdriver.findElement(By.cssSelector("a[href='https://www.amtrak.com/deals']"));
@@ -31,10 +31,10 @@ public class DealsPage {
 		List<WebElement> stationEles = webdriver.findElements(By.cssSelector("div#CAdelas_list ul.std_space li.news_release"));
 		List<String> stationlist = new ArrayList();
 		for (WebElement stationEle : stationEles) {
-			String title = stationEle.findElement(By.className("std_space")).getText();
+			String title = stationEle.findElement(By.tagName("a")).getText();
 			stationlist.add(title);
-			System.out.println(stationlist);
+			
 		}
-
+		return stationlist;
 	}
 }

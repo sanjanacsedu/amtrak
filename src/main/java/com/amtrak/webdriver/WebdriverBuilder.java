@@ -44,7 +44,7 @@ public class WebdriverBuilder {
 
   private static WebDriver newChromeDriver() {
     System.setProperty("webdriver.chrome.driver",
-        "//Users/nafiurrashid/Desktop/selenium/chromedriver");
+        "//Users/sudhakatta/Downloads/automation_downloads/chromedriver");
     WebDriver webDriver = new ChromeDriver();
     return webDriver;
 
@@ -52,7 +52,7 @@ public class WebdriverBuilder {
 
   private static WebDriver newFirefoxDriver() {
     System.setProperty("webdriver.gecko.driver",
-        "//Users/nafiurrashid/Desktop/selenium/geckodriver");
+        "//Users/sudhakatta/Downloads/geckodriver");
     WebDriver webDriver = new FirefoxDriver();
     // webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     // webDriver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);

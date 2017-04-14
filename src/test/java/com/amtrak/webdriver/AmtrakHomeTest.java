@@ -1,5 +1,8 @@
 package com.amtrak.webdriver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,13 +26,13 @@ public class AmtrakHomeTest {
 
   }
 // This test case will automate the homepage title
-  /*@Test
+  @Test
   public void verifyTitleWithoutLogin() {
     AmtrakHomePage homePage = new AmtrakHomePage(driver);
     homePage.load();
     String title = homePage.getTitle();
     Assert.assertEquals("Train & Bus Tickets - National Railroad - USA & Canada | Amtrak", title);
-  }*/
+  }
 
 //This test case will find the deals of California using deals page
   
@@ -38,7 +41,11 @@ public class AmtrakHomeTest {
 	  AmtrakHomePage homePage = new AmtrakHomePage(driver);
 	  homePage.load();
 	  DealsPage dealspage = new DealsPage(driver);
-	  dealspage.getStations(95129);
+	  List<String> stationlist = new ArrayList();
+	  List<String> assertlist = new ArrayList();
+	  stationlist = dealspage.getStations(95129);
+	  Assert.assertTrue(stationlist.size()>5);
+	  
   }
 }
 
