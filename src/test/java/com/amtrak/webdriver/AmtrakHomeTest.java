@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.amtrak.webdriver.pages.AmtrakHomePage;
 import com.amtrak.webdriver.pages.DealsPage;
+import com.amtrak.webdriver.pages.DestinationsPage;
 
 public class AmtrakHomeTest {
 
@@ -48,4 +49,14 @@ public class AmtrakHomeTest {
 		Assert.assertTrue(stationlist.size() > 5);
 
 	}
+	
+	@Test
+	public void openRoutemap() {
+		AmtrakHomePage homePage = new AmtrakHomePage(driver);
+		homePage.load();
+		DestinationsPage destpage = new DestinationsPage(driver);
+		destpage.getrouteMap();
+	}
+	
+	
 }
