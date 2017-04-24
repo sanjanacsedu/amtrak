@@ -23,7 +23,6 @@ public class VerifySearchStationByLocationTest {
   @Before
   public void setup() {
     driver.manage().deleteAllCookies();
-
   }
 
   @Test
@@ -34,7 +33,6 @@ public class VerifySearchStationByLocationTest {
     int count = station.findStationByLocation();
     Assert.assertEquals(5, count);
 
-    // Assert.ass
   }
 
 

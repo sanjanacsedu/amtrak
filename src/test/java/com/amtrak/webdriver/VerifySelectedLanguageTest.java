@@ -22,18 +22,20 @@ public class VerifySelectedLanguageTest {
     driver.manage().deleteAllCookies();
 
   }
-// This test case will automate the homepage title
-  //mvn -Dtest=#verifySelectedLanguageLoginButton test 
+
+  // This test case will automate the homepage title
+  // mvn -Dtest=#verifySelectedLanguageLoginButton test
   @Test
   public void verifySelectedLanguageLoginButton() {
     AmtrakHomePage homePage = new AmtrakHomePage(driver);
     homePage.load();
-   // String title = homePage.getTitle();
-    //Assert.assertEquals("Train & Bus Tickets - National Railroad - USA & Canada | Amtrak", title);
+    // String title = homePage.getTitle();
+    // Assert.assertEquals("Train & Bus Tickets - National Railroad - USA & Canada | Amtrak",
+    // title);
     LanguagesPage lang = new LanguagesPage(driver);
     String languageLogin = lang.languageSelection();
     Assert.assertEquals("Einloggen", languageLogin);
-    //Assert.ass
+    // Assert.ass
   }
 
 
