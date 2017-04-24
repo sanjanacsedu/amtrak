@@ -19,11 +19,13 @@ public class LanguagesPage {
   public LanguagesPage(WebDriver driver) {
     this.driver = driver;
   }
-//  mvn -Dtest=#languageSelection test  
+
+  // mvn -Dtest=#languageSelection test
   public String languageSelection() {
     WebElement element = driver.findElement(By.cssSelector("select[id='language_select']"));
     element.sendKeys("Deutsch");
-    List<WebElement> myElements = driver.findElements(By.cssSelector("select[id='language_select']"));
+    List<WebElement> myElements =
+        driver.findElements(By.cssSelector("select[id='language_select']"));
     for (WebElement e : myElements)
       System.out.println(e.getText());
 
