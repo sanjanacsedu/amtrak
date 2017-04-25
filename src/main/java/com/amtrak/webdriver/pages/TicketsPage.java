@@ -1,5 +1,7 @@
 package com.amtrak.webdriver.pages;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class TicketsPage {
 
 
   private WebDriver driver;
-  private String today;
+  private int today;
 
   /**
    * @param driver
@@ -35,13 +37,21 @@ public class TicketsPage {
     WebElement calendar = driver.findElement(By.cssSelector("table.ui-datepicker-calendar"));
     List<WebElement> columns = calendar.findElements(By.tagName("td"));
 
+    // LocalDateTime.from(dt.toInstant()).plusDays(1);
+    LocalDate localDate = LocalDate.now().plusDays(1);
+    System.out.println(DateTimeFormatter.ofPattern("yyy/MM/dd").format(localDate));
+    String dat = DateTimeFormatter.ofPattern("yyy/MM/dd").format(localDate);
+    String[] parts = dat.split("/");
+    today = localDate.getDayOfMonth();
+
+
     // DatePicker is a table. Thus we can navigate to each cell
     // and if a cell matches with the current date then we will click it.
     for (WebElement cell : columns) {
       /*
        * //If you want to click 18th Date if (cell.getText().equals("18")) {
        */
-      if (cell.getText().equals("24")) {
+      if (cell.getText().equals(parts[2])) {
         cell.click();
         break;
       }
