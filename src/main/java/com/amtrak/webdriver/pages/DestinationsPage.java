@@ -38,6 +38,8 @@ public class DestinationsPage {
 		// ul.nav_links li.destinations li.nav_sublinks li.collinks4 a.button
 		// a[href='https://www.amtrak.com/city-guides-dining-attractions-maps']"));
 		// routebtn.click();
+		
+		
 	}
 
 }

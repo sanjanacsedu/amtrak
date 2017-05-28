@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import com.amtrak.webdriver.pages.AmtrakHomePage;
+import com.amtrak.webdriver.pages.AmtrakLoginPage;
 import com.amtrak.webdriver.pages.DealsPage;
 import com.amtrak.webdriver.pages.DestinationsPage;
 
@@ -28,7 +29,7 @@ public class AmtrakHomeTest {
   }
 
   // This test case will automate the homepage title
-  @Test
+  /*@Test
   public void verifyTitleWithoutLogin() {
     AmtrakHomePage homePage = new AmtrakHomePage(driver);
     homePage.load();
@@ -56,7 +57,15 @@ public class AmtrakHomeTest {
     homePage.load();
     DestinationsPage destpage = new DestinationsPage(driver);
     destpage.getrouteMap();
+  }*/
+
+  @Test
+ public void loginAmtrak() {
+	  AmtrakLoginPage loginpage = new AmtrakLoginPage(driver);
+	  loginpage.login("reslogin","email2sudha@yahoo.com", "Musgrav1te~");
+	  
+  }
+	  
   }
 
 
-}
